@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties">
+    </properties>
+    <typeAliases>
+        <package name="com.itheima.domain"></package>
+    </typeAliases>
+    <!--1、环境配置-->
+    <environments default="mysql">
+        <environment id="mysql">
+            <!--事务管理：JDBC-->
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <!--数据库连接四个基本信息-->
+                <property name="driver" value="${driver}"></property>
+                <property name="url" value="${url}"></property>
+                <property name="username" value="${username}"></property>
+                <property name="password" value="${password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--2、指定映射文件的位置-->
+    <mappers>
+        <!--<mapper resource="com/dao/StudentMapper.xml"/>-->
+       <!-- <package name="com.dao"/>-->
+        <mapper class="com.dao.StudentMapper"/>
+    </mappers>
+</configuration>

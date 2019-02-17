@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:命名空间，SQL区域，设置唯一值-->
+<mapper namespace="com.dao.StudentMapper">
+    <!--查询所有学员信息-->
+    <!--statement对象-->
+    <select id="findAll" resultType="Student">
+        SELECT * FROM student
+    </select>
+
+
+</mapper>
